@@ -14,6 +14,21 @@
 # iuy qnikkgxvxfxtxv
 
 import random
+import string
 
 
-# Здесь пишем код
+def generate_random_name():
+    while True:
+        yield f"{create_word()} {create_word()}"
+
+
+def create_word():
+    letters = string.ascii_lowercase
+    return "".join(random.choices(letters, k=random.randint(1, 16)))
+
+
+gen = generate_random_name()
+print(next(gen))
+print(next(gen))
+print(next(gen))
+print(next(gen))
